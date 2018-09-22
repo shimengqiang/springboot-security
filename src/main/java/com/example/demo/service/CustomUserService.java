@@ -33,7 +33,7 @@ public class CustomUserService implements UserDetailsService {
         }
         SysUser byUsername = userDao.findByUserName(username);
         if (byUsername == null) {
-            log.info(username + "用户不存在");
+            log.info("用户 {} 不存在 ！",username);
         }
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class CustomUserService implements UserDetailsService {
         for (SysRole role : roles) {
 
             authorities.add(new SimpleGrantedAuthority(role.getName()));
-            log.info(role.getName());
+            log.info("用户 {} 拥有 {} 权限",byUsername.getUsername(),role.getName());
 
         }
 

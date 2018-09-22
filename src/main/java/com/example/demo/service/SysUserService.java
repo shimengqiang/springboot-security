@@ -5,6 +5,8 @@ import com.example.demo.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Administrator
  */
@@ -16,5 +18,10 @@ public class SysUserService {
     public void insertUser(SysUser user){
 
         userDao.insertUser(user);
+    }
+
+    public SysUser findUserByName(String name){
+
+        return userDao.findByUserName(name);
     }
 }

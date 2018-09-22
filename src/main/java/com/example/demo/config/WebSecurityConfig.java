@@ -39,9 +39,13 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http
+                .csrf().disable();
 
-        http.authorizeRequests()
-//                .antMatchers("/register").permitAll()
+        http
+
+                .authorizeRequests()
+                .antMatchers( "/toRegister","/insert").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -57,6 +61,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
 
         //auth.userDetailsService(customUserService()).passwordEncoder(new BCryptPasswordEncoder());
 

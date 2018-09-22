@@ -9,7 +9,8 @@
             padding-top: 50px;
         }
         .starter-template {
-            padding: 40px 15px;
+            padding: 10px 445px;
+            /*padding: 40px 15px;*/
             text-align: center;
         }
     </style>
@@ -46,6 +47,15 @@
             </div>
             <input type="submit" id="login" value="Login" class="btn btn-primary" />
         </form>
+
+    </div>
+    <div class="starter-template">
+        <form th:action="@{/toRegister}" method="get">
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="register"/>
+            </div>
+        </form>
+        <a th:href="@{/toRegister}">toRegister</a>
     </div>
 </div>
 </body>

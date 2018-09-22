@@ -10,7 +10,7 @@
             padding-top: 50px;
         }
         .starter-template {
-            padding: 40px 15px;
+            padding: 10px 445px;
             text-align: center;
         }
     </style>
@@ -35,7 +35,7 @@
     <div class="starter-template">
         <h1 th:text="注册"></h1>
 
-        <form th:action="@{/register/insert}" method="post" th:object="${sysuser}">
+        <form th:action="@{/insert}" method="post" th:object="${sysuser}">
 
             <div class="form-group">
                 <label for="username">账号</label>

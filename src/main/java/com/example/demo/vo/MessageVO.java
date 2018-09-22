@@ -10,6 +10,8 @@ public class MessageVO {
     private String content;
     private String extraInfo;
 
+    public MessageVO() {
+    }
 
     public MessageVO(String title, String content) {
         this.title = title;
