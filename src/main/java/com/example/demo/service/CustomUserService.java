@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.dao.SysUserRepository;
 import com.example.demo.dao.UserDao;
 import com.example.demo.entity.SysRole;
 import com.example.demo.entity.SysUser;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CustomUserService implements  UserDetailsService {
+public class CustomUserService implements UserDetailsService {
 
     @Autowired
     private UserDao userDao;
@@ -29,12 +28,12 @@ public class CustomUserService implements  UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        if (StringUtils.isBlank(username)){
+        if (StringUtils.isBlank(username)) {
             return null;
         }
         SysUser byUsername = userDao.findByUserName(username);
         if (byUsername == null) {
-            log.info(username+"用户不存在");
+            log.info(username + "用户不存在");
         }
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
@@ -47,10 +46,8 @@ public class CustomUserService implements  UserDetailsService {
 
         }
 
-        return new User(byUsername.getUsername(),byUsername.getPassword(),authorities);
+        return new User(byUsername.getUsername(), byUsername.getPassword(), authorities);
     }
-
-
 
 
 }

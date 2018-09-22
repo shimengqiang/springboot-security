@@ -111,7 +111,7 @@
                     <!--<imageName>${docker.image.prefix}/${project.artifactId}</imageName>-->
                     <imageName>${project.artifactId}</imageName>
 
-                    <dockerHost>http://ip:2375</dockerHost>
+                    <dockerHost>http://47.104.138.21:2375</dockerHost>
                     <!-- Dockerfile文件存放目录 -->
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
