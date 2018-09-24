@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
@@ -26,12 +25,10 @@ public class RegisterServiceImpl implements RegisterService {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public void registerUser(SysUser sysuser, Model model, BindingResult bindingResult) {
+    public MessageVO registerUser(SysUser sysuser, BindingResult bindingResult) {
 
 
         MessageVO messageVO = new MessageVO();
-
-        model.addAttribute("message", messageVO);
 
         String username = sysuser.getUsername();
 
@@ -56,5 +53,6 @@ public class RegisterServiceImpl implements RegisterService {
         }
         messageVO.setExtraInfo(message.toString());
 
+        return messageVO;
     }
 }
