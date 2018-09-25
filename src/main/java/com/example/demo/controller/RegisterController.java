@@ -28,7 +28,6 @@ public class RegisterController {
 
 
     @RequestLimit(count = 2, time = 1000)
-    @ExceptionHandler(RequestLimitException.class)
     @RequestMapping(value = "/toRegister",method = RequestMethod.GET)
     public String register(HttpServletRequest request, Model model){
 
@@ -49,6 +48,24 @@ public class RegisterController {
 
         return "registerSuccess";
 
+    }
+
+
+    /**
+     * 此方法只处理本类抛出的 RequestLimitException 异常
+     * @param ex
+     * @return
+     */
+//    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(RequestLimitException.class)
+    public String handleEmployeeNotFoundException(Model model, Exception ex){
+//        log.error("Requested URL="+request.getRequestURL());
+        log.error("Exception Raised="+ex);
+
+        model.addAttribute(ex);
+        model.addAttribute("ex", ex);
+
+        return "error";
     }
 
 }
