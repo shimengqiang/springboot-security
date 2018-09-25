@@ -13,4 +13,4 @@ ADD springboot-security-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","-Dspring.profiles.active=prod","/app.jar"]
 
 # 对外端口
-EXPOSE 8082
+EXPOSE 8443
