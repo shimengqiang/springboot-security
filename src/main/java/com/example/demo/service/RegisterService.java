@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.SysUser;
-import org.springframework.ui.Model;
+import com.example.demo.vo.MessageVO;
 import org.springframework.validation.BindingResult;
 
 /**
@@ -15,10 +15,9 @@ public interface RegisterService {
 
     /**
      * @param sysuser
-     * @param model
      * @param bindingResult
      */
-    void registerUser(SysUser sysuser, Model model, BindingResult bindingResult);
+    MessageVO registerUser(SysUser sysuser, BindingResult bindingResult);
 
 
 
