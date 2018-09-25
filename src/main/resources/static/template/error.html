@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-    <meta content="text/html;charset=UTF-8"/>
-    <title>register-result-page</title>
+    <meta charset="utf-8">
+    <title>首页</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/public.css">
-
 </head>
 <body>
-    <p th:text="${message.extraInfo}" class="text-center text-info h1">congratulations!</p>
+
+<div class="container">
+
+    <p class="text-warning text-center text-uppercase h2" th:value="error">error!!!</p>
+
+</div>
 </body>
 </html>
