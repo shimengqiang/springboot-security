@@ -6,7 +6,7 @@ package com.example.demo.exception;
  * @author shimengqiang
  * @version v1.0
  */
-public class RequestLimitException extends Exception{
+public class RequestLimitException extends RuntimeException{
 
         public RequestLimitException() {
             super("HTTP请求超出设定的限制");
